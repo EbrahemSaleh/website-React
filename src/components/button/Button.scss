@@ -4,6 +4,12 @@ $red: #f00946;
 $blue: #276afb;
 $green:#25ca4a;
 
+@mixin theme($color0ne , $colorTwo) {
+  background-color: $color0ne;
+  color: $colorTwo;
+}
+
+
 .btn{
   padding: 8px 20px;
   border-radius: 4px;
@@ -13,8 +19,7 @@ $green:#25ca4a;
   cursor: pointer;
 
   &--primary{
-    background-color: $white;
-    color : $black;
+    @include theme($black , $white);
     border: 1px solid $white;
   }
 
@@ -59,44 +64,39 @@ $green:#25ca4a;
   &--mobile:hover
   {
     transition: all .3s ease-out;
-    background: $white;
-    color: $black;
+    @include theme($black , $white);
+
   }
 
   &--wide:hover{
-    color:$white;
-    background-color: $red;
+    @include theme($red,$white);
     transition: all .2s ease-out;
   }
 }
 
 .blue{
-  background-color:$blue;
-  color:$white;
+  @include theme($blue, $white);
   border:none;
 }
 
 .red{
-background-color:$red;
-color:$white;
+@include theme($red, $white);
 border:none;
 }
 
 .primary {
-  background-color: $black;
-  color:$white;
+  @include theme($black , $white);
   border:none;
 
   &:hover{
-    background-color: $white;
-    color:$black;
+    @include theme($white, $black);
+    
     border:none;
   }
 }
 
 .green{
-  background-color: $green ;
-  color:$white;
+  @include theme($green, $white );
   border: none;
 
   &:hover{
