@@ -9,12 +9,16 @@ $green:#25ca4a;
   color: $colorTwo;
 }
 
+@mixin Border  {
+  border: none;
+}
+
 
 .btn{
   padding: 8px 20px;
   border-radius: 4px;
   outline: none;
-  border: none;
+  @include Border;
   white-space: nowrap;
   cursor: pointer;
 
@@ -76,29 +80,29 @@ $green:#25ca4a;
 
 .blue{
   @include theme($blue, $white);
-  border:none;
+  @include Border;
+
 }
 
 .red{
 @include theme($red, $white);
-border:none;
+@include Border;
 }
 
 .primary {
   @include theme($black , $white);
-  border:none;
+  @include Border;
+
 
   &:hover{
     @include theme($white, $black);
-    
-    border:none;
+    @include Border;
   }
 }
 
 .green{
   @include theme($green, $white );
-  border: none;
-
+  @include Border;
   &:hover{
     background-color: $black;
   }
