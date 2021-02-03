@@ -68,7 +68,8 @@ $green:#25ca4a;
   &--mobile:hover
   {
     transition: all .3s ease-out;
-    @include theme($black , $white);
+    background: #fff;
+    color: #242424;
 
   }
 
@@ -107,6 +108,8 @@ $green:#25ca4a;
     background-color: $black;
   }
 }
+
+
 
 
 
